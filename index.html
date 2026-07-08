@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="am" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Repi Kalehiwet Bible College | ረጲ ቃለ ሕይወት መጽሐፍ ቅዱስ ኮሌጅ</title>
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <!-- Google Fonts Matrix: Poppins & Noto Sans Ethiopic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icon Systems Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Viewport Animation Engine (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* --- BASE (unchanged structure) --- */
+        body {
+            font-family: 'Poppins', 'Noto Sans Ethiopic', sans-serif;
+            background-color: #050b18;
+            color: #f1f5f9;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        /* Premium Responsive Glassmorphism Architecture */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .glass-navbar {
+            background: rgba(5, 11, 24, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Cinematic Gradient & Layer Composites */
+        .hero-bg {
+            position: relative;
+            background: radial-gradient(circle at 50% 35%, rgba(26, 54, 110, 0.45) 0%, rgba(5, 11, 24, 1) 80%);
+        }
+
+        .silhouette-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.06;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cpath d='M400,500 C300,510 100,480 50,420 L50,150 C120,200 300,210 400,180 C500,210 680,200 750,150 L750,420 C700,480 500,510 400,500 Z' fill='%23ffffff'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cpath d='M100,600 L100,450 L130,400 L130,250 L150,150 L150,50 L155,50 L155,150 L175,250 L175,400 L200,450 L200,600 Z' fill='%23ffffff'/%3E%3C/svg%3E");
+            background-position: center bottom, left bottom;
+            background-repeat: no-repeat;
+            background-size: 70% auto, 28% auto;
+        }
+
+        /* Ambient Glow Enclosures */
+        .glow-ring {
+            box-shadow: 0 0 40px rgba(37, 99, 235, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.15);
+        }
+        
+        .glow-gold-btn {
+            box-shadow: 0 0 20px rgba(234, 179, 8, 0.15);
+        }
+        .glow-gold-btn:hover {
+            box-shadow: 0 0 30px rgba(234, 179, 8, 0.55);
+            transform: translateY(-2px);
+        }
+
+        /* Floating Logo Oscillator Animation */
+        @keyframes logoFloat {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(0.5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-logo-float {
+            animation: logoFloat 6s ease-in-out infinite;
+        }
+
+        /* Particle Motion Effects */
+        @keyframes particleMove {
+            0% { transform: translateY(0px) translateX(0px); opacity: 0; }
+            50% { opacity: 0.4; }
+            100% { transform: translateY(-120px) translateX(30px); opacity: 0; }
+        }
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleMove 9s infinite linear;
+        }
+
+        /* Underline Micro-interaction Effect */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #eab308);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Form Controls Custom Transitions */
+        .form-input-focus:focus {
+            outline: none;
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+        }
+
+        /* --- 100% SMART RESPONSIVE (no additions/removals, only adjustments) --- */
+        /* Fluid containers */
+        .max-w-7xl { max-width: 80rem; }
+        
+        /* Responsive text sizing - scales perfectly */
+        html { font-size: 16px; }
+        @media (max-width: 640px) { html { font-size: 15px; } }
+        @media (max-width: 480px) { html { font-size: 14px; } }
+        @media (max-width: 360px) { html { font-size: 13px; } }
+
+        /* All images, iframes, SVGs stay within bounds */
+        img, iframe, svg, video { max-width: 100%; height: auto; vertical-align: middle; }
+
+        /* Prevent overflow on all elements */
+        * { max-width: 100%; box-sizing: border-box; }
+
+        /* Touch-friendly targets on mobile */
+        @media (max-width: 640px) {
+            .nav-link, .mobile-link, button, a { cursor: default; }
+            .glow-gold-btn, .glass-panel a { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+        }
+
+        /* Keep absolute elements within bounds */
+        .absolute, .fixed { max-width: 100%; }
+
+        /* Fix grid gaps on small screens */
+        @media (max-width: 640px) {
+            .gap-8 { gap: 1.5rem; }
+            .gap-6 { gap: 1rem; }
+            .gap-4 { gap: 0.75rem; }
+        }
+
+        /* Improve glass effect on mobile */
+        @media (max-width: 480px) {
+            .glass-panel { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        }
+
+        /* Ensure flex wraps properly */
+        .flex { flex-wrap: wrap; }
+        .flex-nowrap { flex-wrap: nowrap; }
+
+        /* Prevent horizontal scroll */
+        .overflow-x-hidden { overflow-x: hidden; }
+        .w-full { width: 100%; }
+        .min-h-screen { min-height: 100vh; }
+
+        /* Responsive iframe container */
+        .iframe-container { position: relative; width: 100%; height: 100%; }
+        .iframe-container iframe { width: 100%; height: 100%; border: 0; }
+
+        /* Smart spacing for mobile */
+        @media (max-width: 640px) {
+            .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+            .py-12 { padding-top: 2rem; padding-bottom: 2rem; }
+            .mb-12 { margin-bottom: 2rem; }
+        }
+    </style>
+</head>
+<body class="selection:bg-yellow-500 selection:text-slate-900 w-full overflow-x-hidden">
+
+    <!-- Fluid Responsive Sticky Navbar Container -->
+    <nav class="glass-navbar fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 py-4 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 group shrink-0">
+                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-lg border border-blue-600/30">
+                    <!-- Nav Logo Asset Fallback -->
+                    <img src="Photos/photo_2026-07-07_22-51-00.jpg" alt="Logo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'40\' fill=\'%23003cd2\'/></svg>'">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-sm sm:text-base font-bold text-white tracking-wide group-hover:text-blue-400 ransition-colors">ረጲ ቃለ ሕይወት</span>
+                    <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-widest font-sans -mt-1">Bible College</span>
+                </div>
+            </a>
+
+            <!-- Responsive Links Array -->
+            <div class="hidden lg:flex items-center gap-5 xl:gap-7 text-xs xl:text-sm font-medium text-slate-200">
+                <a href="#home" class="nav-link relative py-1 transition-colors hover:text-white">Home</a>
+                <a href="#about" class="nav-link relative py-1 transition-colors hover:text-white">About</a>
+                <a href="#programs" class="nav-link relative py-1 transition-colors hover:text-white">Programs</a>
+                <a href="#values" class="nav-link relative py-1 transition-colors hover:text-white">Core Values</a>
+                <a href="#mission-vision" class="nav-link relative py-1 transition-colors hover:text-white">Mission & Vision</a>
+                <a href="#gallery" class="nav-link relative py-1 transition-colors hover:text-white">Gallery</a>
+                <a href="#contact" class="nav-link relative py-1 transition-colors hover:text-white">Contact</a>
+                <a href="#login" class="ml-4 bg-blue-600 hover:bg-blue-500 border border-blue-400/30 text-white px-5 py-2 rounded-full transition-all duration-300 shadow-md">Login</a>
+            </div>
+
+            <!-- Mobile Hamburger Toggle UI -->
+            <button id="menu-btn" class="lg:hidden text-slate-200 focus:outline-none p-2 rounded-lg hover:bg-white/5 transition-colors" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-xl sm:text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 rounded-xl glass-panel p-4 absolute top-full left-4 right-4 flex flex-col gap-2.5 shadow-2xl max-h-[80vh] overflow-y-auto">
+            <a href="#home" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Home</a>
+            <a href="#about" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">About</a>
+            <a href="#programs" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Programs</a>
+            <a href="#values" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Core Values</a>
+            <a href="#mission-vision" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Mission & Vision</a>
+            <a href="#gallery" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Gallery</a>
+            <a href="#contact" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Contact</a>
+            <a href="#login" class="mobile-link bg-blue-600 text-center text-white py-2.5 rounded-lg mt-1 font-semibold text-sm shadow-md">Login Portal</a>
+        </div>
+    </nav>
+
+    <!-- Hero Screen Area -->
+    <section id="home" class="min-h-screen hero-bg flex items-center justify-center pt-24 pb-16 overflow-hidden px-4 sm:px-6 lg:px-8">
+        <div class="silhouette-overlay"></div>
+        <div class="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-yellow-500/10 via-blue-500/5 to-transparent pointer-events-none"></div>
+        <div class="absolute w-64 sm:w-[500px] h-64 sm:h-[500px] rounded-full bg-blue-600/10 blur-[80px] sm:blur-[120px] top-1/4 left-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+        <div class="relative z-10 w-full max-w-4xl mx-auto text-center flex flex-col items-center">
+            
+            <!-- Main Hero Image Replacement Frame -->
+            <div class="mb-6 sm:mb-8 p-1.5 rounded-full border border-white/20 glass-panel glow-ring animate-logo-float shrink-0">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-2xl relative">
+                    <!-- Hero Logo Asset File Link -->
+                    <img src="Photos/photo_2026-07-07_22-51-00.jpg" alt="Repi Kalehiwet Bible College Logo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'40\' fill=\'%23003cd2\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'12\'>RKBC</text></svg>'">
+                </div>
+            </div>
+
+            <!-- Typography Header Hierarchy -->
+            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-normal text-white mb-2 px-2" data-aos="fade-up">
+                ረጲ ቃለ ሕይወት <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-200 to-yellow-200">መጽሐፍ ቅዱስ ኮሌጅ</span>
+            </h1>
+            <h2 class="text-base sm:text-xl md:text-2xl lg:text-3xl font-light text-slate-300 tracking-wide mb-6" data-aos="fade-up" data-aos-delay="100">
+                Repi Kalehiwet Bible College
+            </h2>
+            
+            <p class="text-xs sm:text-sm md:text-base lg:text-lg text-slate-400 font-medium max-w-xl italic tracking-wider mb-8 px-4" data-aos="fade-up" data-aos-delay="200">
+                "Training Christ-Centered Leaders Through God's Word"
+            </p>
+
+            <!-- Action Grid Matrix Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3.5 items-center justify-center w-full sm:w-auto max-w-xs sm:max-w-none px-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="#contact" class="w-full sm:w-auto text-center bg-gradient-to-r from-yellow-500 to-amber-500 text-slate-950 font-bold px-7 py-3 rounded-xl shadow-lg transition-all duration-300 glow-gold-btn tracking-wide text-xs uppercase shrink-0">
+                    Apply Now <i class="fa-solid fa-paper-plane ml-1.5"></i>
+                </a>
+                <a href="#login" class="w-full sm:w-auto text-center glass-panel border border-white/20 hover:bg-white/10 text-white font-medium px-7 py-3 rounded-xl transition-all duration-300 tracking-wide text-xs uppercase shrink-0">
+                    Login
+                </a>
+                <a href="#about" class="w-full sm:w-auto text-center text-slate-400 hover:text-white underline underline-offset-4 text-xs font-semibold tracking-wide transition-colors duration-200 py-1">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Profile Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-5" data-aos="fade-right">
+                <div class="flex items-center gap-3">
+                    <span class="h-0.5 w-6 bg-blue-500"></span>
+                    <span class="text-[11px] uppercase font-bold tracking-widest text-blue-400">Institutional Profile</span>
+                </div>
+                <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                    የረጲ ቃለ ሕይወት መጽሐፍ ቅዱስ ኮሌጅ አጭር ማብራሪያ
+                </h2>
+                
+                <div class="glass-panel rounded-2xl p-5 sm:p-7 md:p-8 space-y-4 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-indigo-600"></div>
+                    <h3 class="text-base sm:text-lg font-bold text-yellow-400">የኮሌጁ አጭር መግለጫ</h3>
+                    
+                    <p class="text-slate-300 leading-relaxed text-xs sm:text-sm md:text-base font-normal tracking-wide text-justify sm:text-left">
+                        በኢትዮጵያ ቃለ ሕይወት ቤተክርስቲያን በአዲስ አበባ እና በአዲስ አበባ ዙሪያ፤ በደቡብ ምእራብ ህብረት፤ በረጲ ቃለ ሕይወት አጥብያ ቤተክርስቲያን እንገኛለን። ቤተክርስቲያኗ ሁለንተናዊ አገልግሎት ለቅዱሳን ከማድረስ አንፃር ብዙ ሥራ በመስራት ላይ ትገኛለች።
+                    </p>
+                    <p class="text-slate-300 leading-relaxed text-xs sm:text-sm md:text-base font-normal tracking-wide text-justify sm:text-left">
+                        አማኞች በ21ኛው ክፍለ ዘመን ፈተናዎችን ማለፍ እንዲችሉ የእግዚአብሔርን ቃል በሚገባ በመረዳት ፍሬያማ እንዲሆኑ ከሚያስፈልጉ ነገሮች አንዱ እና ትልቁ ነገር በእግዚአብሔር ቃል ሥር የሰደዱ አማኞችን ማፍራት ነው።
+                    </p>
+                    <p class="text-slate-300 leading-relaxed text-xs sm:text-sm md:text-base font-normal tracking-wide text-justify sm:text-left">
+                        ከዚህም የተነሳ ቤተ ክርስቲያን ቅዱሳን በእግዚአብሔር ቃል ሥር ሰድደው እንዲያድጉ ባላት ጥልቅ ፍላጎት የተነሳ ከኢትዮጵያ ቃለ ሕይወት ቤተክርስቲያን መጽሐፍ ቅዱስ ኮሌጅ ጋር በመተባበር በ2015 ዓ.ም ረጲ ቃለ ሕይወት መጽሐፍ ቅዱስ ኮሌጅ (ተቋም) ተመሠረተ። በጊዜው ፈተናዎች ቢበዙም በእግዚአብሔር ኃይል በመተማመን በመነሳት ወደፊት ትልቅ ራዕይ በመያዝ እየተጓዝን እንገኛለን።
+                    </p>
+
+                    <div class="pt-1 flex items-center gap-2 text-[11px] sm:text-xs text-slate-400 font-semibold tracking-wide">
+                        <i class="fa-solid fa-location-dot text-red-400"></i> አዲስ አበባ፣ ኢትዮጵያ
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5" data-aos="fade-left">
+                <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[260px] sm:min-h-[300px] border border-white/5">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 border border-blue-500/20">
+                        <i class="fa-solid fa-cross"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm md:text-base italic text-slate-300 leading-relaxed max-w-md">
+                        "የእግዚአብሔር ሰው ፍጹምና ለበጎ ሥራ ሁሉ የተዘጋጀ ይሆን ዘንድ፥ የእግዚአብሔር መንፈስ ያለበት መጽሐፍ ሁሉ ለትምህርትና ለተግሣጽ ልብንም ለማቅናት በጽድቅም ላለው ምክር ደግሞ ይጠቅማል።"
+                    </p>
+                    <span class="mt-4 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-yellow-500">2ኛ ጢሞቴዎስ 3:16-17</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Academic Curriculum Grid -->
+    <section id="programs" class="py-20 bg-slate-950/40 border-y border-white/5 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2">
+                <span class="text-xs uppercase font-bold tracking-widest text-blue-400">Academic Structure</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Our Academic Curriculum</h2>
+                <div class="w-12 h-0.5 bg-blue-500 mx-auto mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                
+                <div class="glass-panel rounded-2xl p-6 sm:p-8 group hover:border-blue-500/40 transition-all duration-300 shadow-xl relative overflow-hidden" data-aos="fade-up">
+                    <div class="flex items-center gap-4 mb-5 sm:mb-6">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl border border-blue-500/20 group-hover:scale-110 transition-transform shrink-0">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-blue-400 block">Program Level I</span>
+                            <h3 class="text-lg sm:text-xl font-bold text-white">Diploma Program</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-slate-300 font-medium text-xs sm:text-sm">
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-chevron-right text-blue-500 text-[10px]"></i> Biblical Studies</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-chevron-right text-blue-500 text-[10px]"></i> Ministry Foundations</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-chevron-right text-blue-500 text-[10px]"></i> Leadership Training</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-6 sm:p-8 group hover:border-yellow-500/40 transition-all duration-300 shadow-xl relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-4 mb-5 sm:mb-6">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-xl border border-yellow-500/20 group-hover:scale-110 transition-transform shrink-0">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-yellow-400 block">Program Level II</span>
+                            <h3 class="text-lg sm:text-xl font-bold text-white">Degree Program</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-slate-300 font-medium text-xs sm:text-sm">
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-chevron-right text-yellow-500 text-[10px]"></i> Advanced Biblical Studies</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-chevron-right text-yellow-500 text-[10px]"></i> Christian Leadership</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-chevron-right text-yellow-500 text-[10px]"></i> Ministry Development</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section id="values" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2">
+            <span class="text-xs uppercase font-bold tracking-widest text-blue-400">Foundational Pillars</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">የኮሌጁ መሠረታዊ እሴቶች</h2>
+            <div class="w-12 h-0.5 bg-blue-500 mx-auto mt-2"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            
+            <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:-translate-y-1 hover:bg-slate-800/30 transition-all duration-300 border-t-2 border-t-blue-500" data-aos="fade-up">
+                <div class="w-9 h-9 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-base mb-3.5"><i class="fa-solid fa-book-bible"></i></div>
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-500 block mb-1">01 . AUTHORITY</span>
+                <p class="text-slate-200 font-semibold text-xs sm:text-sm leading-snug">መጽሐፍ ቅዱስን እንደ መጨረሻ ሥልጣን መቀበል</p>
+            </div>
+
+            <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:-translate-y-1 hover:bg-slate-800/30 transition-all duration-300 border-t-2 border-t-purple-500" data-aos="fade-up" data-aos-delay="50">
+                <div class="w-9 h-9 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-base mb-3.5"><i class="fa-solid fa-user-check"></i></div>
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-500 block mb-1">02 . CHARACTER</span>
+                <p class="text-slate-200 font-semibold text-xs sm:text-sm leading-snug">የክርስቶስን ባህሪ መከተል</p>
+            </div>
+
+            <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:-translate-y-1 hover:bg-slate-800/30 transition-all duration-300 border-t-2 border-t-yellow-500" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-9 h-9 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-base mb-3.5"><i class="fa-solid fa-dove"></i></div>
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-500 block mb-1">03 . GUIDANCE</span>
+                <p class="text-slate-200 font-semibold text-xs sm:text-sm leading-snug">በመንፈስ ቅዱስ መመራት</p>
+            </div>
+
+            <div class="glass-panel p-5 sm:p-6 rounded-2xl hover:-translate-y-1 hover:bg-slate-800/30 transition-all duration-300 border-t-2 border-t-emerald-500" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-9 h-9 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-base mb-3.5"><i class="fa-solid fa-share-nodes"></i></div>
+                <span class="text-[9px] sm:text-[10px] font-bold text-slate-500 block mb-1">04 . DISCIPLESHIP</span>
+                <p class="text-slate-200 font-semibold text-xs sm:text-sm leading-snug">ተምረው የሚላኩ ደቀ መዛሙርት ማፍራት</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Mission & Vision Panels -->
+    <section id="mission-vision" class="py-20 bg-slate-950/30 border-t border-white/5 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-right">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-7 h-7 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 text-xs"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3 class="text-lg font-bold text-white">ተልዕኮ (Mission)</h3>
+                    </div>
+                    <p class="text-base sm:text-lg text-slate-200 leading-relaxed font-normal tracking-wide">
+                        መጽሐፍ ቅዱስን በትክክል የሚያስተምሩ፤ በክርስቶስ ባህርይ የተቀየሩ፤ በመንፈስ ቅዱስ የተሞሉ እና ቤተ ክርስቲያንና ዓለምን የሚያገለግሉ መሪዎችን ማብቃት።
+                    </p>
+                </div>
+                <div class="mt-6 text-right opacity-[0.03] sm:opacity-5 absolute bottom-4 right-4">
+                    <i class="fa-solid fa-book-open text-6xl sm:text-7xl text-white"></i>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-left">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-7 h-7 bg-yellow-500/10 rounded-lg flex items-center justify-center text-yellow-400 text-xs"><i class="fa-solid fa-eye"></i></div>
+                        <h3 class="text-lg font-bold text-white">ራዕይ (Vision)</h3>
+                    </div>
+                    <p class="text-base sm:text-lg text-slate-200 leading-relaxed font-normal tracking-wide">
+                        በኢትዮጵያ እና በዓለም አቀፍ ደረጃ፤ በመጽሐፍ ቅዱስ ቃል ሥር የሠደዱ፤ በመንፈስ ቅዱስ የሚመሩ እና ዓለምን የሚቀይሩ ደቀ መዛሙርትን የሚያበቃ ታማኝ የመጽሐፍ ቅዱስ ትምህርት ቤት ማድረግ ነው።
+                    </p>
+                </div>
+                <div class="mt-6 text-right opacity-[0.03] sm:opacity-5 absolute bottom-4 right-4">
+                    <i class="fa-solid fa-earth-africa text-6xl sm:text-7xl text-white"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Operational Metrics -->
+    <section class="py-12 bg-blue-950/20 border-y border-white/5 text-center px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4">
+            <div>
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-yellow-400 block">2015 E.C.</span>
+                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-500 tracking-wider block mt-0.5">Founded</span>
+            </div>
+            <div>
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-blue-400 block">2</span>
+                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-500 tracking-wider block mt-0.5">Programs</span>
+            </div>
+            <div>
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-purple-400 block">1</span>
+                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-500 tracking-wider block mt-0.5">Mission</span>
+            </div>
+            <div>
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-emerald-400 block">1</span>
+                <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-500 tracking-wider block mt-0.5">Vision</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Gallery Archive -->
+    <section id="gallery" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2">
+            <span class="text-xs uppercase font-bold tracking-widest text-blue-400">Campus Archives</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">Media Folders</h2>
+            <div class="w-12 h-0.5 bg-blue-500 mx-auto mt-2"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            <div class="group relative aspect-video rounded-xl overflow-hidden glass-panel flex items-center justify-center border border-white/10 hover:border-blue-500/40 transition-all duration-300 shadow-md w-full" data-aos="zoom-in">
+                <i class="fa-regular fa-image text-2xl sm:text-3xl text-slate-600 group-hover:text-blue-400 group-hover:scale-110 transition-all duration-300"></i>
+                <span class="absolute bottom-2.5 left-3 text-[11px] sm:text-xs font-medium text-slate-400 group-hover:text-slate-200 transition-colors">Church Service Sanctuary</span>
+            </div>
+            <div class="group relative aspect-video rounded-xl overflow-hidden glass-panel flex items-center justify-center border border-white/10 hover:border-blue-500/40 transition-all duration-300 shadow-md w-full" data-aos="zoom-in" data-aos-delay="50">
+                <i class="fa-regular fa-image text-2xl sm:text-3xl text-slate-600 group-hover:text-blue-400 group-hover:scale-110 transition-all duration-300"></i>
+                <span class="absolute bottom-2.5 left-3 text-[11px] sm:text-xs font-medium text-slate-400 group-hover:text-slate-200 transition-colors">Theology Classroom Hall</span>
+            </div>
+            <div class="group relative aspect-video rounded-xl overflow-hidden glass-panel flex items-center justify-center border border-white/10 hover:border-blue-500/40 transition-all duration-300 shadow-md w-full" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fa-regular fa-image text-2xl sm:text-3xl text-slate-600 group-hover:text-blue-400 group-hover:scale-110 transition-all duration-300"></i>
+                <span class="absolute bottom-2.5 left-3 text-[11px] sm:text-xs font-medium text-slate-400 group-hover:text-slate-200 transition-colors">Graduation Convocation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portal Authentication Form Section -->
+    <section id="login" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-md mx-auto w-full" data-aos="fade-up">
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/10">
+                
+                <div class="text-center mb-6">
+                    <div class="w-10 h-10 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center text-sm mx-auto mb-2 border border-blue-500/20"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white">Portal Authentication</h3>
+                    <p class="text-xs text-slate-400 mt-1">Access verified administrative dashboards</p>
+                </div>
+
+                <form class="space-y-4" onsubmit="event.preventDefault();">
+                    <div>
+                        <label class="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Email Address</label>
+                        <input type="email" placeholder="student@repikalehiwet.edu" class="w-full px-4 py-2.5 bg-slate-950/60 border border-slate-800 rounded-xl text-slate-100 placeholder-slate-600 text-xs sm:text-sm form-input-focus transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Password</label>
+                        <input type="password" placeholder="••••••••" class="w-full px-4 py-2.5 bg-slate-950/60 border border-slate-800 rounded-xl text-slate-100 placeholder-slate-600 text-xs sm:text-sm form-input-focus transition-all">
+                    </div>
+
+                    <div class="flex items-center justify-between text-[11px] sm:text-xs text-slate-400 pt-0.5">
+                        <label class="flex items-center gap-1.5 cursor-pointer select-none">
+                            <input type="checkbox" class="rounded accent-blue-500 bg-slate-950 border-slate-800"> Remember Me
+                        </label>
+                        <a href="#" class="hover:text-blue-400 transition-colors">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="w-full py-3 mt-1 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all text-xs uppercase tracking-wider shadow-lg">
+                        Login Entry
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Communication Hub & Location Map Module Only -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            
+            <div class="lg:col-span-5 space-y-5 flex flex-col justify-center" data-aos="fade-right">
+                <div>
+                    <span class="text-xs uppercase font-bold tracking-widest text-blue-400">Institutional Registry</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Contact Details</h2>
+                </div>
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md">Connect directly across verified administration coordinates listed here for inquiries regarding baseline applications or institutional data validation processing.</p>
+
+                <div class="space-y-3.5">
+                    <div class="flex items-start gap-4 p-4 glass-panel rounded-xl">
+                        <div class="text-red-400 text-base mt-0.5 shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-xs sm:text-sm">Location Coordinates</h4>
+                            <p class="text-slate-400 text-xs mt-0.5"> Addis Ababa, Ethiopia | Repi Church Campus</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 p-4 glass-panel rounded-xl">
+                        <div class="text-blue-400 text-base mt-0.5 shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-xs sm:text-sm">Email Mailbox Channel</h4>
+                            <p class="text-slate-400 text-xs mt-0.5 break-all"> repikalehiwetbiblecollege@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Map Display Canvas Embed Area -->
+            <div class="lg:col-span-7 w-full h-[280px] sm:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl glass-panel p-1.5 border border-white/10" data-aos="fade-left">
+                <iframe 
+                    class="w-full h-full rounded-xl opacity-85 hover:opacity-100 transition-opacity duration-300" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m4!1m2!1d38.7088!2d9.0048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2s!4v1719800000000!5m2!1sen!2s" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Structural Layout Footer Component -->
+    <footer class="bg-slate-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+            
+            <div class="lg:col-span-5 space-y-3.5">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full overflow-hidden bg-white border border-blue-600/30 flex items-center justify-center shrink-0">
+                        <img src="Photos/photo_2026-07-07_22-51-00.jpg" alt="Logo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'40\' fill=\'%23003cd2\'/></svg>'">
+                    </div>
+                    <span class="text-sm sm:text-base font-bold text-white tracking-wide">ረጲ ቃለ ሕይወት መጽሐፍ ቅዱስ ኮሌጅ</span>
+                </div>
+                <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
+                    Dedicated to training systemic Christian ministry leaders equipped to handle global ecclesiastical responsibilities through theological wisdom.
+                </p>
+                <div class="flex gap-4 text-slate-600 text-base pt-1">
+                    <a href="#" class="hover:text-blue-400 transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-blue-400 transition-colors" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="hover:text-blue-400 transition-colors" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 space-y-2.5">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400">Quick Navigation</h4>
+                <div class="flex flex-col gap-2 text-xs text-slate-500 font-medium">
+                    <a href="#home" class="hover:text-yellow-400 transition-colors">Home Dashboard</a>
+                    <a href="#about" class="hover:text-yellow-400 transition-colors">About Profile</a>
+                    <a href="#programs" class="hover:text-yellow-400 transition-colors">Programs Curriculum</a>
+                    <a href="#values" class="hover:text-yellow-400 transition-colors">Core Values</a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 space-y-2.5">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400">Registry Email Contact</h4>
+                <p class="text-xs text-slate-500">Reach the admissions desk coordinates directly via the data link address here.</p>
+                <p class="text-xs font-semibold text-slate-300 break-all"> repikalehiwetbiblecollege@gmail.com</p>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-slate-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] sm:text-[11px] font-medium text-slate-600 text-center sm:text-left">
+            <p>&copy; 2026 Repi Kalehiwet Bible College. All Institutional Rights Reserved.</p>
+            <p class="italic text-slate-500">"የእግዚአብሔር ቃል ሕያው ነውና የሚሠራም..."</p>
+        </div>
+    </footer>
+
+    <!-- Execution Control Interfaces Hooks Script Layer -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init({
+            duration: 900,
+            once: true
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.className = mobileMenu.classList.contains('hidden') ? 'fa-solid fa-bars text-xl sm:text-2xl' : 'fa-solid fa-xmark text-xl sm:text-2xl';
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('hidden')) toggleMenu();
+        }));
+    </script>
+</body>
+</html>
