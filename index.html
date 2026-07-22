@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="am" class="scroll-smooth">
 <head>
@@ -5,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Repi Kalehiwet Bible College | ረጲ ቃለ ሕይወት መጽሐፍ ቅዱስ ኮሌጅ</title>
     <!-- Tailwind CSS Engine -->
-    <script src="https://cdn.tailwindcss.com">
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts Matrix: Poppins & Noto Sans Ethiopic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* --- BASE (unchanged structure) --- */
         body {
             font-family: 'Poppins', 'Noto Sans Ethiopic', sans-serif;
             background-color: #050b18;
@@ -26,7 +25,6 @@
             width: 100%;
         }
         
-        /* Premium Responsive Glassmorphism Architecture */
         .glass-panel {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(16px);
@@ -41,7 +39,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        /* Cinematic Gradient & Layer Composites */
         .hero-bg {
             position: relative;
             background: radial-gradient(circle at 50% 35%, rgba(26, 54, 110, 0.45) 0%, rgba(5, 11, 24, 1) 80%);
@@ -63,7 +60,6 @@
             background-size: 70% auto, 28% auto;
         }
 
-        /* Ambient Glow Enclosures */
         .glow-ring {
             box-shadow: 0 0 40px rgba(37, 99, 235, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.15);
         }
@@ -76,7 +72,6 @@
             transform: translateY(-2px);
         }
 
-        /* Floating Logo Oscillator Animation */
         @keyframes logoFloat {
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(0.5deg); }
@@ -86,21 +81,33 @@
             animation: logoFloat 6s ease-in-out infinite;
         }
 
-        /* Particle Motion Effects */
-        @keyframes particleMove {
-            0% { transform: translateY(0px) translateX(0px); opacity: 0; }
-            50% { opacity: 0.4; }
-            100% { transform: translateY(-120px) translateX(30px); opacity: 0; }
-        }
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.25);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: particleMove 9s infinite linear;
+        /* Infinite Marquee Scrolling Animations for 20+ Photos */
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        /* Underline Micro-interaction Effect */
+        @keyframes scrollRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        .marquee-track-left {
+            display: flex;
+            width: max-content;
+            animation: scrollLeft 35s linear infinite;
+        }
+
+        .marquee-track-right {
+            display: flex;
+            width: max-content;
+            animation: scrollRight 35s linear infinite;
+        }
+
+        .marquee-track-left:hover, .marquee-track-right:hover {
+            animation-play-state: paused;
+        }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -115,69 +122,11 @@
             width: 100%;
         }
 
-        /* Form Controls Custom Transitions */
-        .form-input-focus:focus {
-            outline: none;
-            border-color: rgba(59, 130, 246, 0.6);
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
-        }
-
-        /* --- 100% SMART RESPONSIVE (no additions/removals, only adjustments) --- */
-        /* Fluid containers */
-        .max-w-7xl { max-width: 80rem; }
-        
-        /* Responsive text sizing - scales perfectly */
         html { font-size: 16px; }
         @media (max-width: 640px) { html { font-size: 15px; } }
-        @media (max-width: 480px) { html { font-size: 14px; } }
-        @media (max-width: 360px) { html { font-size: 13px; } }
-
-        /* All images, iframes, SVGs stay within bounds */
+        
         img, iframe, svg, video { max-width: 100%; height: auto; vertical-align: middle; }
-
-        /* Prevent overflow on all elements */
         * { max-width: 100%; box-sizing: border-box; }
-
-        /* Touch-friendly targets on mobile */
-        @media (max-width: 640px) {
-            .nav-link, .mobile-link, button, a { cursor: default; }
-            .glow-gold-btn, .glass-panel a { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
-        }
-
-        /* Keep absolute elements within bounds */
-        .absolute, .fixed { max-width: 100%; }
-
-        /* Fix grid gaps on small screens */
-        @media (max-width: 640px) {
-            .gap-8 { gap: 1.5rem; }
-            .gap-6 { gap: 1rem; }
-            .gap-4 { gap: 0.75rem; }
-        }
-
-        /* Improve glass effect on mobile */
-        @media (max-width: 480px) {
-            .glass-panel { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-        }
-
-        /* Ensure flex wraps properly */
-        .flex { flex-wrap: wrap; }
-        .flex-nowrap { flex-wrap: nowrap; }
-
-        /* Prevent horizontal scroll */
-        .overflow-x-hidden { overflow-x: hidden; }
-        .w-full { width: 100%; }
-        .min-h-screen { min-height: 100vh; }
-
-        /* Responsive iframe container */
-        .iframe-container { position: relative; width: 100%; height: 100%; }
-        .iframe-container iframe { width: 100%; height: 100%; border: 0; }
-
-        /* Smart spacing for mobile */
-        @media (max-width: 640px) {
-            .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
-            .py-12 { padding-top: 2rem; padding-bottom: 2rem; }
-            .mb-12 { margin-bottom: 2rem; }
-        }
     </style>
 </head>
 <body class="selection:bg-yellow-500 selection:text-slate-900 w-full overflow-x-hidden">
@@ -187,40 +136,38 @@
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#home" class="flex items-center gap-3 group shrink-0">
                 <div class="w-9 h-9 sm:w-11 sm:h-11 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-lg border border-blue-600/30">
-                    <!-- Nav Logo Asset Fallback -->
                     <img src="photo_2026-07-07_22-51-00.jpg" alt="Logo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'40\' fill=\'%23003cd2\'/></svg>'">
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-sm sm:text-base font-bold text-white tracking-wide group-hover:text-blue-400 ransition-colors">ረጲ ቃለ ሕይወት</span>
+                    <span class="text-sm sm:text-base font-bold text-white tracking-wide group-hover:text-blue-400 transition-colors">ረጲ ቃለ ሕይወት</span>
                     <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-widest font-sans -mt-1">Bible College</span>
                 </div>
             </a>
 
-            <!-- Responsive Links Array -->
             <div class="hidden lg:flex items-center gap-5 xl:gap-7 text-xs xl:text-sm font-medium text-slate-200">
                 <a href="#home" class="nav-link relative py-1 transition-colors hover:text-white">Home</a>
                 <a href="#about" class="nav-link relative py-1 transition-colors hover:text-white">About</a>
                 <a href="#programs" class="nav-link relative py-1 transition-colors hover:text-white">Programs</a>
                 <a href="#values" class="nav-link relative py-1 transition-colors hover:text-white">Core Values</a>
                 <a href="#mission-vision" class="nav-link relative py-1 transition-colors hover:text-white">Mission & Vision</a>
+                <a href="#photo-stream" class="nav-link relative py-1 transition-colors hover:text-white">Photo Stream</a>
                 <a href="#gallery" class="nav-link relative py-1 transition-colors hover:text-white">Gallery</a>
                 <a href="#contact" class="nav-link relative py-1 transition-colors hover:text-white">Contact</a>
                 <a href="#login" class="ml-4 bg-blue-600 hover:bg-blue-500 border border-blue-400/30 text-white px-5 py-2 rounded-full transition-all duration-300 shadow-md">Login</a>
             </div>
 
-            <!-- Mobile Hamburger Toggle UI -->
             <button id="menu-btn" class="lg:hidden text-slate-200 focus:outline-none p-2 rounded-lg hover:bg-white/5 transition-colors" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars text-xl sm:text-2xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Drawer Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden mt-3 rounded-xl glass-panel p-4 absolute top-full left-4 right-4 flex flex-col gap-2.5 shadow-2xl max-h-[80vh] overflow-y-auto">
             <a href="#home" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Home</a>
             <a href="#about" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">About</a>
             <a href="#programs" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Programs</a>
             <a href="#values" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Core Values</a>
             <a href="#mission-vision" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Mission & Vision</a>
+            <a href="#photo-stream" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Photo Stream</a>
             <a href="#gallery" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Gallery</a>
             <a href="#contact" class="mobile-link text-slate-300 hover:text-yellow-400 py-1.5 px-2 rounded-lg hover:bg-white/5 transition-all text-sm border-b border-white/5">Contact</a>
             <a href="#login" class="mobile-link bg-blue-600 text-center text-white py-2.5 rounded-lg mt-1 font-semibold text-sm shadow-md">Login Portal</a>
@@ -233,17 +180,14 @@
         <div class="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-yellow-500/10 via-blue-500/5 to-transparent pointer-events-none"></div>
         <div class="absolute w-64 sm:w-[500px] h-64 sm:h-[500px] rounded-full bg-blue-600/10 blur-[80px] sm:blur-[120px] top-1/4 left-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-        <div class="relative z-10 w-full max-w-4xl mx-auto text-center flex flex-col items-center">
+        <div class="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center">
             
-            <!-- Main Hero Image Replacement Frame -->
             <div class="mb-6 sm:mb-8 p-1.5 rounded-full border border-white/20 glass-panel glow-ring animate-logo-float shrink-0">
                 <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-2xl relative">
-                    <!-- Hero Logo Asset File Link -->
-                    <img src="photo_2026-07-07_22-51-00.jpg" alt="Repi Kalehiwet Bible College Logo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'40\' fill=\'%23003cd2\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'12\'>RKBC</text></svg>'">
+                    <img src="photo_2026-07-07_22-51-00.jpg" alt="Logo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'40\' fill=\'%23003cd2\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'12\'>RKBC</text></svg>'">
                 </div>
             </div>
 
-            <!-- Typography Header Hierarchy -->
             <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-normal text-white mb-2 px-2" data-aos="fade-up">
                 ረጲ ቃለ ሕይወት <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-200 to-yellow-200">መጽሐፍ ቅዱስ ኮሌጅ</span>
             </h1>
@@ -255,8 +199,7 @@
                 "Training Christ-Centered Leaders Through God's Word"
             </p>
 
-            <!-- Action Grid Matrix Buttons -->
-            <div class="flex flex-col sm:flex-row gap-3.5 items-center justify-center w-full sm:w-auto max-w-xs sm:max-w-none px-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex flex-col sm:flex-row gap-3.5 items-center justify-center w-full sm:w-auto max-w-xs sm:max-w-none px-4 mb-6" data-aos="fade-up" data-aos-delay="300">
                 <a href="#contact" class="w-full sm:w-auto text-center bg-gradient-to-r from-yellow-500 to-amber-500 text-slate-950 font-bold px-7 py-3 rounded-xl shadow-lg transition-all duration-300 glow-gold-btn tracking-wide text-xs uppercase shrink-0">
                     Apply Now <i class="fa-solid fa-paper-plane ml-1.5"></i>
                 </a>
@@ -266,6 +209,297 @@
                 <a href="#about" class="w-full sm:w-auto text-center text-slate-400 hover:text-white underline underline-offset-4 text-xs font-semibold tracking-wide transition-colors duration-200 py-1">
                     Learn More
                 </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NEW: Infinite Sliding Hero Marquee (Designed for your 20+ Photos) -->
+    <section id="photo-stream" class="py-16 bg-slate-950/80 border-t border-white/5 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+            <span class="text-xs uppercase font-bold tracking-widest text-blue-400">Campus Photo Collection</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Explore Our 20+ Campus & Ministry Moments</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-xl mx-auto">Smooth infinite marquee sliders moving continuously from left to right and right to left. Replace each placeholder filename with your images (`photo1.jpg`, `photo2.jpg`, etc.).</p>
+        </div>
+
+        <!-- Row 1: Sliding Left (Leftward Stream) -->
+        <div class="relative w-full overflow-hidden mb-6">
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#050b18] to-transparent z-20 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#050b18] to-transparent z-20 pointer-events-none"></div>
+            
+            <div class="marquee-track-left gap-6 py-2">
+                <!-- Group A (Cards 1 to 10) -->
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <!-- Replace src with your image: src="photo1.jpg" -->
+                        <div class="absolute inset-0 bg-blue-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-blue-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 1 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-blue-400 font-bold uppercase tracking-wider">Sanctuary</span>
+                        <h4 class="text-white text-sm font-bold">Morning Prayer Service</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-indigo-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-indigo-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 2 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-indigo-400 font-bold uppercase tracking-wider">Classroom</span>
+                        <h4 class="text-white text-sm font-bold">Theology Lecture Hall</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-yellow-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-yellow-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 3 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-yellow-400 font-bold uppercase tracking-wider">Fellowship</span>
+                        <h4 class="text-white text-sm font-bold">Student Worship Team</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-emerald-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-emerald-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 4 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Campus</span>
+                        <h4 class="text-white text-sm font-bold">College Compound Ground</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-purple-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-purple-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 5 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wider">Library</span>
+                        <h4 class="text-white text-sm font-bold">Scriptural Study Session</h4>
+                    </div>
+                </div>
+
+                <!-- Duplicate Group A for Infinite Seamless Loop -->
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-blue-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-blue-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 1 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-blue-400 font-bold uppercase tracking-wider">Sanctuary</span>
+                        <h4 class="text-white text-sm font-bold">Morning Prayer Service</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-indigo-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-indigo-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 2 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-indigo-400 font-bold uppercase tracking-wider">Classroom</span>
+                        <h4 class="text-white text-sm font-bold">Theology Lecture Hall</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-yellow-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-yellow-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 3 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-yellow-400 font-bold uppercase tracking-wider">Fellowship</span>
+                        <h4 class="text-white text-sm font-bold">Student Worship Team</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-emerald-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-emerald-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 4 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Campus</span>
+                        <h4 class="text-white text-sm font-bold">College Compound Ground</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-purple-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-purple-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 5 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wider">Library</span>
+                        <h4 class="text-white text-sm font-bold">Scriptural Study Session</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Sliding Right (Rightward Stream) -->
+        <div class="relative w-full overflow-hidden">
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#050b18] to-transparent z-20 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#050b18] to-transparent z-20 pointer-events-none"></div>
+            
+            <div class="marquee-track-right gap-6 py-2">
+                <!-- Group B (Cards 6 to 10) -->
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-amber-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-amber-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 6 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Leadership</span>
+                        <h4 class="text-white text-sm font-bold">Student Council Meeting</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-sky-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-sky-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 7 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-sky-400 font-bold uppercase tracking-wider">Outreach</span>
+                        <h4 class="text-white text-sm font-bold">Community Evangelism</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-rose-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-rose-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 8 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-rose-400 font-bold uppercase tracking-wider">Seminary</span>
+                        <h4 class="text-white text-sm font-bold">Faculty Staff Meeting</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-teal-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-teal-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 9 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-teal-400 font-bold uppercase tracking-wider">Graduation</span>
+                        <h4 class="text-white text-sm font-bold">Diploma Award Ceremony</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-cyan-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-cyan-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 10 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-wider">Conference</span>
+                        <h4 class="text-white text-sm font-bold">Annual Church Union Meet</h4>
+                    </div>
+                </div>
+
+                <!-- Duplicate Group B for Infinite Seamless Loop -->
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-amber-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-amber-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 6 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Leadership</span>
+                        <h4 class="text-white text-sm font-bold">Student Council Meeting</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-sky-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-sky-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 7 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-sky-400 font-bold uppercase tracking-wider">Outreach</span>
+                        <h4 class="text-white text-sm font-bold">Community Evangelism</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-rose-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-rose-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 8 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-rose-400 font-bold uppercase tracking-wider">Seminary</span>
+                        <h4 class="text-white text-sm font-bold">Faculty Staff Meeting</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-teal-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-teal-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 9 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-teal-400 font-bold uppercase tracking-wider">Graduation</span>
+                        <h4 class="text-white text-sm font-bold">Diploma Award Ceremony</h4>
+                    </div>
+                </div>
+
+                <div class="w-72 sm:w-80 glass-panel rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-xl group">
+                    <div class="relative h-44 bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-cyan-950/40 flex flex-col items-center justify-center p-4 text-center">
+                            <i class="fa-regular fa-image text-3xl mb-1 text-cyan-400"></i>
+                            <span class="text-[11px] font-mono text-slate-300">Photo 10 (Placeholder)</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-wider">Conference</span>
+                        <h4 class="text-white text-sm font-bold">Annual Church Union Meet</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -463,181 +697,254 @@
         </div>
     </section>
 
-    <!-- Media Gallery Archive -->
-    <section id="gallery" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- Animated Photo Slider Archive Section -->
+    <section id="gallery" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2">
             <span class="text-xs uppercase font-bold tracking-widest text-blue-400">Campus Archives</span>
-            <h2 class="text-2xl sm:text-3xl font-bold text-white">Media Folders</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">Animated Photo Gallery Carousel</h2>
             <div class="w-12 h-0.5 bg-blue-500 mx-auto mt-2"></div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            <div class="group relative aspect-video rounded-xl overflow-hidden glass-panel flex items-center justify-center border border-white/10 hover:border-blue-500/40 transition-all duration-300 shadow-md w-full" data-aos="zoom-in">
-                <i class="fa-regular fa-image text-2xl sm:text-3xl text-slate-600 group-hover:text-blue-400 group-hover:scale-110 transition-all duration-300"></i>
-                <span class="absolute bottom-2.5 left-3 text-[11px] sm:text-xs font-medium text-slate-400 group-hover:text-slate-200 transition-colors">Church Service Sanctuary</span>
-            </div>
-            <div class="group relative aspect-video rounded-xl overflow-hidden glass-panel flex items-center justify-center border border-white/10 hover:border-blue-500/40 transition-all duration-300 shadow-md w-full" data-aos="zoom-in" data-aos-delay="50">
-                <i class="fa-regular fa-image text-2xl sm:text-3xl text-slate-600 group-hover:text-blue-400 group-hover:scale-110 transition-all duration-300"></i>
-                <span class="absolute bottom-2.5 left-3 text-[11px] sm:text-xs font-medium text-slate-400 group-hover:text-slate-200 transition-colors">Theology Classroom Hall</span>
-            </div>
-            <div class="group relative aspect-video rounded-xl overflow-hidden glass-panel flex items-center justify-center border border-white/10 hover:border-blue-500/40 transition-all duration-300 shadow-md w-full" data-aos="zoom-in" data-aos-delay="100">
-                <i class="fa-regular fa-image text-2xl sm:text-3xl text-slate-600 group-hover:text-blue-400 group-hover:scale-110 transition-all duration-300"></i>
-                <span class="absolute bottom-2.5 left-3 text-[11px] sm:text-xs font-medium text-slate-400 group-hover:text-slate-200 transition-colors">Graduation Convocation</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portal Authentication Form Section -->
-    <section id="login" class="py-20 px-4 sm:px-6 lg:px-8 relative">
-        <div class="max-w-md mx-auto w-full" data-aos="fade-up">
-            <div class="glass-panel rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/10">
+        <!-- Slider Main Wrapper -->
+        <div class="relative rounded-2xl overflow-hidden glass-panel border border-white/10 shadow-2xl p-2 sm:p-4" data-aos="zoom-in">
+            
+            <!-- Slides Container -->
+            <div id="slider-container" class="relative aspect-video rounded-xl overflow-hidden flex items-center justify-center bg-slate-900/60">
                 
-                <div class="text-center mb-6">
-                    <div class="w-10 h-10 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center text-sm mx-auto mb-2 border border-blue-500/20"><i class="fa-solid fa-user-shield"></i></div>
-                    <h3 class="text-lg sm:text-xl font-bold text-white">Portal Authentication</h3>
-                    <p class="text-xs text-slate-400 mt-1">Access verified administrative dashboards</p>
+                <!-- Slide 1 -->
+                <div class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-100 slide-item flex flex-col items-center justify-center p-6 text-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10"></div>
+                    <i class="fa-solid fa-place-of-worship text-5xl sm:text-6xl text-blue-400 mb-4 z-20 animate-bounce"></i>
+                    <h3 class="text-lg sm:text-2xl font-bold text-white z-20 relative">Church Service Sanctuary</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm z-20 mt-1 max-w-md">Dedicated spaces for vibrant worship, prayer gatherings, and communal spiritual growth.</p>
                 </div>
 
-                <form class="space-y-4" onsubmit="event.preventDefault();">
-                    <div>
-                        <label class="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Email Address</label>
-                        <input type="email" placeholder="student@repikalehiwet.edu" class="w-full px-4 py-2.5 bg-slate-950/60 border border-slate-800 rounded-xl text-slate-100 placeholder-slate-600 text-xs sm:text-sm form-input-focus transition-all">
-                    </div>
+                <!-- Slide 2 -->
+                <div class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0 slide-item flex flex-col items-center justify-center p-6 text-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10"></div>
+                    <i class="fa-solid fa-chalkboard-user text-5xl sm:text-6xl text-yellow-400 mb-4 z-20 animate-pulse"></i>
+                    <h3 class="text-lg sm:text-2xl font-bold text-white z-20 relative">Theology Classroom Hall</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm z-20 mt-1 max-w-md">Equipping student leaders with rigorous scriptural education and academic depth.</p>
+                </div>
 
-                    <div>
-                        <label class="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Password</label>
-                        <input type="password" placeholder="••••••••" class="w-full px-4 py-2.5 bg-slate-950/60 border border-slate-800 rounded-xl text-slate-100 placeholder-slate-600 text-xs sm:text-sm form-input-focus transition-all">
-                    </div>
-
-                    <div class="flex items-center justify-between text-[11px] sm:text-xs text-slate-400 pt-0.5">
-                        <label class="flex items-center gap-1.5 cursor-pointer select-none">
-                            <input type="checkbox" class="rounded accent-blue-500 bg-slate-950 border-slate-800"> Remember Me
-                        </label>
-                        <a href="#" class="hover:text-blue-400 transition-colors">Forgot Password?</a>
-                    </div>
-
-                    <button type="submit" class="w-full py-3 mt-1 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all text-xs uppercase tracking-wider shadow-lg">
-                        Login Entry
-                    </button>
-                </form>
+                <!-- Slide 3 -->
+                <div class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0 slide-item flex flex-col items-center justify-center p-6 text-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10"></div>
+                    <i class="fa-solid fa-graduation-cap text-5xl sm:text-6xl text-emerald-400 mb-4 z-25"></i>
+                    <h3 class="text-lg sm:text-2xl font-bold text-white z-20 relative">Graduation Convocation</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm z-20 mt-1 max-w-md">Celebrating the commissioning of trained disciples ready to serve nationwide.</p>
+                </div>
 
             </div>
+
+            <!-- Navigation Controls (Next / Prev Buttons) -->
+            <button id="prev-btn" aria-label="Previous Slide" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-panel bg-black/40 text-white flex items-center justify-center hover:bg-blue-600 transition-all border border-white/20 shadow-lg">
+                <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
+            </button>
+            <button id="next-btn" aria-label="Next Slide" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-panel bg-black/40 text-white flex items-center justify-center hover:bg-blue-600 transition-all border border-white/20 shadow-lg">
+                <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
+            </button>
+
+            <!-- Pagination Dots Indicators -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+                <button class="dot w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300" data-index="0" aria-label="Slide 1"></button>
+                <button class="dot w-2.5 h-2.5 rounded-full bg-white/20 transition-all duration-300" data-index="1" aria-label="Slide 2"></button>
+                <button class="dot w-2.5 h-2.5 rounded-full bg-white/20 transition-all duration-300" data-index="2" aria-label="Slide 3"></button>
+            </div>
+
         </div>
     </section>
 
-    <!-- Communication Hub & Location Map Module Only -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+    <!-- Contact & Admissions Inquiry Section -->
+    <section id="contact" class="py-20 bg-slate-950/40 border-t border-white/5 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto glass-panel rounded-2xl p-6 sm:p-10 border border-white/10">
+            <div class="text-center max-w-xl mx-auto mb-8 space-y-2">
+                <span class="text-xs uppercase font-bold tracking-widest text-blue-400">Get In Touch</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Contact & Admissions</h2>
+                <p class="text-slate-400 text-xs sm:text-sm">Reach out to our administration office for inquiries regarding enrollment, programs, or church partnerships.</p>
+            </div>
             
-            <div class="lg:col-span-5 space-y-5 flex flex-col justify-center" data-aos="fade-right">
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for your message. Our administration will contact you soon!');">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Full Name</label>
+                        <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="உங்கள் ሙሉ ስም / Full Name">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Email / Phone</label>
+                        <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="email@example.com or phone">
+                    </div>
+                </div>
                 <div>
-                    <span class="text-xs uppercase font-bold tracking-widest text-blue-400">Institutional Registry</span>
-                    <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Contact Details</h2>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Message / Inquiry</label>
+                    <textarea rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Write your message here..."></textarea>
                 </div>
-                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md">Connect directly across verified administration coordinates listed here for inquiries regarding baseline applications or institutional data validation processing.</p>
-
-                <div class="space-y-3.5">
-                    <div class="flex items-start gap-4 p-4 glass-panel rounded-xl">
-                        <div class="text-red-400 text-base mt-0.5 shrink-0"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                            <h4 class="font-bold text-slate-200 text-xs sm:text-sm">Location Coordinates</h4>
-                            <p class="text-slate-400 text-xs mt-0.5"> Addis Ababa, Ethiopia | Repi Church Campus</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 p-4 glass-panel rounded-xl">
-                        <div class="text-blue-400 text-base mt-0.5 shrink-0"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h4 class="font-bold text-slate-200 text-xs sm:text-sm">Email Mailbox Channel</h4>
-                            <p class="text-slate-400 text-xs mt-0.5 break-all"> repikalehiwetbiblecollege@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Interactive Map Display Canvas Embed Area -->
-            <div class="lg:col-span-7 w-full h-[280px] sm:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl glass-panel p-1.5 border border-white/10" data-aos="fade-left">
-                <iframe 
-                    class="w-full h-full rounded-xl opacity-85 hover:opacity-100 transition-opacity duration-300" 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m4!1m2!1d38.7088!2d9.0048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2s!4v1719800000000!5m2!1sen!2s" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg text-xs uppercase tracking-wider">
+                    Send Message <i class="fa-solid fa-paper-plane ml-1"></i>
+                </button>
+            </form>
         </div>
     </section>
 
-    <!-- Structural Layout Footer Component -->
-    <footer class="bg-slate-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 border-t border-white/5">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+    <!-- Comprehensive Footer Section -->
+    <footer class="bg-slate-950 border-t border-white/10 pt-16 pb-8 px-4 sm:px-6 lg:px-8 text-slate-400 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             
-            <div class="lg:col-span-5 space-y-3.5">
+            <!-- Col 1: Brand Info -->
+            <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full overflow-hidden bg-white border border-blue-600/30 flex items-center justify-center shrink-0">
-                        <img src="photo_2026-07-07_22-51-00.jpg" alt="Logo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'40\' fill=\'%23003cd2\'/></svg>'">
+                    <div class="w-9 h-9 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-md">
+                        <img src="photo_2026-07-07_22-51-00.jpg" alt="Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="text-sm sm:text-base font-bold text-white tracking-wide">ረጲ ቃለ ሕይወት መጽሐፍ ቅዱስ ኮሌጅ</span>
+                    <span class="font-bold text-white text-base tracking-wide">ረጲ ቃለ ሕይወት</span>
                 </div>
-                <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
-                    Dedicated to training systemic Christian ministry leaders equipped to handle global ecclesiastical responsibilities through theological wisdom.
+                <p class="text-slate-400 leading-relaxed text-xs">
+                    ረጲ ቃለ ሕይወት መጽሐፍ ቅዱስ ኮሌጅ - አማኞችን በእግዚአብሔር ቃል ላይ አጽንቶ በማነጽ ለክርስቶስ አገልግሎት ማዘጋጀት።
                 </p>
-                <div class="flex gap-4 text-slate-600 text-base pt-1">
-                    <a href="#" class="hover:text-blue-400 transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="hover:text-blue-400 transition-colors" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="#" class="hover:text-blue-400 transition-colors" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full bg-white/5 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                    <a href="#" aria-label="Telegram" class="w-8 h-8 rounded-full bg-white/5 hover:bg-sky-500 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-telegram text-xs"></i></a>
+                    <a href="#" aria-label="YouTube" class="w-8 h-8 rounded-full bg-white/5 hover:bg-red-600 hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-youtube text-xs"></i></a>
                 </div>
             </div>
 
-            <div class="lg:col-span-3 space-y-2.5">
-                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400">Quick Navigation</h4>
-                <div class="flex flex-col gap-2 text-xs text-slate-500 font-medium">
-                    <a href="#home" class="hover:text-yellow-400 transition-colors">Home Dashboard</a>
-                    <a href="#about" class="hover:text-yellow-400 transition-colors">About Profile</a>
-                    <a href="#programs" class="hover:text-yellow-400 transition-colors">Programs Curriculum</a>
-                    <a href="#values" class="hover:text-yellow-400 transition-colors">Core Values</a>
-                </div>
+            <!-- Col 2: Quick Links -->
+            <div class="space-y-3">
+                <h4 class="text-white font-bold text-sm tracking-wider uppercase">Quick Links</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#home" class="hover:text-yellow-400 transition-colors">Home</a></li>
+                    <li><a href="#about" class="hover:text-yellow-400 transition-colors">About Us</a></li>
+                    <li><a href="#programs" class="hover:text-yellow-400 transition-colors">Academic Programs</a></li>
+                    <li><a href="#values" class="hover:text-yellow-400 transition-colors">Core Values</a></li>
+                    <li><a href="#gallery" class="hover:text-yellow-400 transition-colors">Campus Gallery</a></li>
+                </ul>
             </div>
 
-            <div class="lg:col-span-4 space-y-2.5">
-                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400">Registry Email Contact</h4>
-                <p class="text-xs text-slate-500">Reach the admissions desk coordinates directly via the data link address here.</p>
-                <p class="text-xs font-semibold text-slate-300 break-all"> repikalehiwetbiblecollege@gmail.com</p>
+            <!-- Col 3: Programs -->
+            <div class="space-y-3">
+                <h4 class="text-white font-bold text-sm tracking-wider uppercase">Academic Programs</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#programs" class="hover:text-yellow-400 transition-colors">Diploma in Biblical Studies</a></li>
+                    <li><a href="#programs" class="hover:text-yellow-400 transition-colors">Degree in Theology & Ministry</a></li>
+                    <li><a href="#programs" class="hover:text-yellow-400 transition-colors">Christian Leadership Training</a></li>
+                    <li><a href="#programs" class="hover:text-yellow-400 transition-colors">Certificate Courses</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Contact Info -->
+            <div class="space-y-3">
+                <h4 class="text-white font-bold text-sm tracking-wider uppercase">Contact Us</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-yellow-500 mt-0.5"></i>
+                        <span>Repi Kalehiwet Church Compound, Addis Ababa, Ethiopia</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-phone text-blue-400"></i>
+                        <span>+251 11 ... / +251 9...</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-envelope text-purple-400"></i>
+                        <span>info@repikalehiwet.edu.et</span>
+                    </li>
+                </ul>
             </div>
 
         </div>
 
-        <div class="max-w-7xl mx-auto border-t border-slate-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] sm:text-[11px] font-medium text-slate-600 text-center sm:text-left">
-            <p>&copy; 2026 Repi Kalehiwet Bible College. All Institutional Rights Reserved.</p>
-            <p class="italic text-slate-500">"የእግዚአብሔር ቃል ሕያው ነውና የሚሠራም..."</p>
+        <!-- Copyright Line -->
+        <div class="max-w-7xl mx-auto pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+            <p>&copy; 2015 - 2026 Repi Kalehiwet Bible College. All rights reserved.</p>
+            <p class="flex items-center gap-1">Designed with <i class="fa-solid fa-heart text-red-500 text-[10px]"></i> for Christian Leadership</p>
         </div>
     </footer>
 
-    <!-- Execution Control Interfaces Hooks Script Layer -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-    </script>
+    <!-- JavaScript Engine for Navbar & Interactive Slider -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS animations
         AOS.init({
-            duration: 900,
+            duration: 800,
             once: true
         });
 
+        // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        function toggleMenu() {
+        menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            const icon = menuBtn.querySelector('i');
-            icon.className = mobileMenu.classList.contains('hidden') ? 'fa-solid fa-bars text-xl sm:text-2xl' : 'fa-solid fa-xmark text-xl sm:text-2xl';
+        });
+
+        // Hide mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Animated Photo Slider Logic
+        const slides = document.querySelectorAll('.slide-item');
+        const dots = document.querySelectorAll('.dot');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        
+        let currentIndex = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+                slide.style.pointerEvents = i === index ? 'auto' : 'none';
+            });
+            dots.forEach((dot, i) => {
+                dot.style.backgroundColor = i === index ? 'rgba(59, 130, 246, 1)' : 'rgba(255, 255, 255, 0.2)';
+                dot.style.transform = i === index ? 'scale(1.2)' : 'scale(1)';
+            });
+            currentIndex = index;
         }
 
-        menuBtn.addEventListener('click', toggleMenu);
-        mobileLinks.forEach(link => link.addEventListener('click', () => {
-            if (!mobileMenu.classList.contains('hidden')) toggleMenu();
-        }));
+        function nextSlide() {
+            let nextIndex = (currentIndex + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+
+        function prevSlideFunc() {
+            let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetTimer();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlideFunc();
+            resetTimer();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                let index = parseInt(e.target.getAttribute('data-index'));
+                showSlide(index);
+                resetTimer();
+            });
+        });
+
+        function startTimer() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startTimer();
+        }
+
+        showSlide(0);
+        startTimer();
     </script>
 </body>
 </html>
+
+```
